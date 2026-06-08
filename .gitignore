@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.env
+
+# IDE / редакторы
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Word временные файлы
+~$*.docx
+
+# Playwright артефакты
+.playwright-mcp/
+
+# Логи
+*.log
+logs/
