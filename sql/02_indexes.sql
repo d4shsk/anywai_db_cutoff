@@ -1,11 +1,8 @@
--- =============================================================================
 -- Индексы
--- =============================================================================
 -- UNIQUE-индексы на users.telegram_id, llm_providers.code, llm_models.code,
 -- event_kinds.code, а также все PK-индексы создаются автоматически
 -- определением UNIQUE/PRIMARY KEY в schema. Здесь — только дополнительные
 -- индексы под конкретные сценарии.
--- =============================================================================
 
 -- 1. Список диалогов пользователя, отсортированный по последней активности.
 --    Закрывает запрос: WHERE user_id = ? ORDER BY updated_at DESC.
@@ -59,11 +56,3 @@ CREATE INDEX ix_events_kind_occurred
 CREATE INDEX gin_events_properties
     ON analytics_events
     USING GIN (properties_json jsonb_path_ops);
-
--- 9. Сообщения пользователя через JOIN dialogues.
---    Индекс на dialogues.user_id уже есть в составе ix_dialogues_user_updated.
---    Дополнительно ничего не нужно: PostgreSQL умеет ходить по
---    (user_id, updated_at) → dialogue_id и потом по ix_messages_dialogue_created.
-
--- 10. Уникальность одной активной свёртки на диалог уже обеспечена
---     PRIMARY KEY (dialogue_id) в dialogue_summaries, отдельный индекс не нужен.

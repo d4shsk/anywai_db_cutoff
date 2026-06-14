@@ -63,7 +63,7 @@ def create_dialogue(payload: schemas.DialogueCreate, db: Session = Depends(get_d
 @app.get("/dialogues", response_model=list[schemas.DialogueOut], tags=["dialogues"])
 def list_dialogues(user_id: int, include_archived: bool = False, db: Session = Depends(get_db)):
     q = db.query(models.Dialogue).filter(models.Dialogue.user_id == user_id)
-    if not include_archived:
+    if not include_archived: # В реальном продукте возможности архивировать диалоги пока нет, но это в планах.
         q = q.filter(models.Dialogue.is_archived.is_(False))
     return q.order_by(models.Dialogue.updated_at.desc()).all()
 
