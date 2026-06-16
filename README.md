@@ -23,7 +23,6 @@
 
 ```
 anywai_db_cutoff/
-├── Отчет_БД_anywai.docx     ← печатный отчёт
 ├── er_diagram.png           ← ER-диаграмма
 ├── sql/                     ← схема, индексы, триггеры, функции, процедуры
 └── app/                     ← CRUD REST API (FastAPI + SQLAlchemy)
