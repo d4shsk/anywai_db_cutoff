@@ -7,7 +7,7 @@
 
 ## Готовый продукт
 
-[![qr-code.png](https://i.postimg.cc/cJm67Djj/qr-code.png)](https://postimg.cc/gwxYmKGq)
+[![qr-code-(1).png](https://i.postimg.cc/D0QRZygk/qr-code-(1).png)](https://postimg.cc/sGXTHzqw)
 
 ## Вступление
 
